@@ -48,3 +48,16 @@ document.getElementById("mySubmit").onclick = function (){
     userName = document.getElementById("myInput").value;
     document.getElementById("myH1").innerHTML = `Hello ${userName}`
 }
+
+
+
+let radius ;
+const PI = 3.14285
+
+
+document.getElementById("mySubmit1").onclick = function (){
+    radius = document.getElementById("myInput1").value;
+    radius = Number(radius);
+    let circum = 2 * PI * radius ;
+    document.getElementById("myH3").innerHTML = `${circum}cm`;
+}
