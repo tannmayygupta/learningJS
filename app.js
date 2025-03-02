@@ -1,63 +1,24 @@
-// alert("Heyy samiksha mam")
+const incrementBtn = document.getElementById("incrementBtn");
 
-// let l = prompt("i like you mam, guess whi is this")
+const resetBtn = document.getElementById("resetBtn");
 
-// console.log(l)
+const decrementBtn = document.getElementById("decrementBtn");
 
-// let l = prompt("Enter name of my mam");
+const countlabel = document.getElementById("countlabel");
 
-// if(l.toLowerCase()==="samiksha"){
-//     alert("Hello mam, i welcome you <3");
-// }
-// else{
-//     alert("you are not my mam ");
-// }
+let count = 0 ;
 
-
-// let p = Math.random();
-
-// if (p >=0.5){
-//     console.log(p+"is gr8 than");
-// }
-// else{
-//     cons
-// }
-
-
-// password
-// password should be more than 6 char 
-// password should not have space 
-
-// let pass = prompt("Enter the password");
-
-// if(pass.length >= 6 ){
-//     if(pass.indexOf(" ") === -1){
-//         console.log("valid password");
-//     }
-//     else{
-//         alert("password no space should be there");
-//     }
-// }
-// else{
-//     alert("password should be greater than 6 char");
-// }
-
-let userName ;
-
-document.getElementById("mySubmit").onclick = function (){
-    userName = document.getElementById("myInput").value;
-    document.getElementById("myH1").innerHTML = `Hello ${userName}`
+incrementBtn.onclick = function(){
+    count++;
+    countlabel.innerHTML = count ;
 }
 
+decrementBtn.onclick = function(){
+    count--;
+    countlabel.innerHTML = count ;
+}
 
-
-let radius ;
-const PI = 3.14285
-
-
-document.getElementById("mySubmit1").onclick = function (){
-    radius = document.getElementById("myInput1").value;
-    radius = Number(radius);
-    let circum = 2 * PI * radius ;
-    document.getElementById("myH3").innerHTML = `${circum}cm`;
+resetBtn.onclick = function(){
+    count = 0 ;
+    countlabel.innerHTML = count ;
 }
