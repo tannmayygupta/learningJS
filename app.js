@@ -1,24 +1,26 @@
-const incrementBtn = document.getElementById("incrementBtn");
+let myBtn = document.getElementById("myBtn");
 
-const resetBtn = document.getElementById("resetBtn");
+let mylabel1 = document.getElementById("mylabel1");
+let mylabel2 = document.getElementById("mylabel2");
+let mylabel3 = document.getElementById("mylabel3");
 
-const decrementBtn = document.getElementById("decrementBtn");
 
-const countlabel = document.getElementById("countlabel");
+let min = 1 ;
 
-let count = 0 ;
+let max = 6 ; //  if said random no. btwn 50 - 100 then min will be 50 and max will be 100 
 
-incrementBtn.onclick = function(){
-    count++;
-    countlabel.innerHTML = count ;
+let randomNum1 ;
+let randomNum2 ;
+let randomNum3 ;
+
+
+myBtn.onclick = function(){
+    randomNum1 = Math.floor(Math.random() * max ) + min ;
+    randomNum2 = Math.floor(Math.random() * max ) + min ;
+    randomNum3 = Math.floor(Math.random() * max ) + min ;
+    mylabel1.innerHTML = randomNum1 ;
+    mylabel2.innerHTML = randomNum2 ;
+    mylabel3.innerHTML = randomNum3 ;
+    
 }
 
-decrementBtn.onclick = function(){
-    count--;
-    countlabel.innerHTML = count ;
-}
-
-resetBtn.onclick = function(){
-    count = 0 ;
-    countlabel.innerHTML = count ;
-}
