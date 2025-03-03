@@ -3,30 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Infinite Number Guessing Game</title>
+    <link rel="stylesheet" href="a.css">
 </head>
 <body>
-    <input type="checkbox" id="mycheckBox">
-    <label for="mycheckBox">Subscribe</label> 
-    <!-- // id and for label should be same  -->
-    <br><br> 
-    <input type="radio" id="myRadio3" name="payment">
-    <label for="myRadio3">VISA</label>
-    <br>
-    <input type="radio" id="myRadio2" name="payment">
-    <label for="myRadio2">PAYPAL</label>
-    <br>
-    <input type="radio" id="myRadio1" name="payment">
-    <label for="myRadio1">RAZOR PAY</label>
-    <br>
-    <br>
-     
-    <button  type="submit" id="submitbtn"> Submit </button>
-
-    <p id="subResult"></p>
-    <p id="payResult"></p>
+    <div class="game-container">
+        <h1>Infinite Number Guessing Game</h1>
+        <p>Guess a number between 1 and 100! Type 'quit' or 'stop' to end the game.</p>
+        <button id="startGame">Start Game</button>
+        <p id="result"></p>
+    </div>
 
     <script src="index.js"></script>
-    
 </body>
 </html>
