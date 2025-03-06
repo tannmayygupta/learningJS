@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature converter</title>
+    <title>Dice Roller</title>
     <link rel="stylesheet" href="a.css">
 </head>
 <body>
-    <h1>Temperature converter </h1>
-    <label for="temp" >Enter the temperature:</label><br>
-    <input type="text" id="temp">
-    <br>
-    <input type="radio" id="celtoFar" name="ctf">
-    <label for="celtoFar">Celcius to Farenheit </label>
-    <br>
-    <input type="radio" id="fartoCel" name="ctf">
-    <label for="fartoCel">Farenheit to Celcius </label>
-    <br>
-    <button onclick="convert()">Submit</button>
+    <h1>Roll Dice</h1>
 
-    <p id="result"></p>
+    <label> # of dice </label>
+    <input type="number" min="1" value="1" id="numOfDice">
+
+    <button onclick="RollDice()"> RollDice </button>
+
+    <div id="diceResult"></div>
+    <div id="diceImage"></div>
+
 
     <script src="index.js"></script>
 </body>

@@ -1,27 +1,21 @@
-const temp = document.getElementById("temp");
+function RollDice(){
 
-const celtoFar = document.getElementById("celtoFar");
+    const numOfDice = document.getElementById("numOfDice").value ;
+    const diceResult = document.getElementById("diceResult");
+    const diceImage = document.getElementById("diceImage");
 
-const fartoCel = document.getElementById("fartoCel");
+    const values = [] ;
 
-const result = document.getElementById("result");
+    const images = [] ;
 
-let c ; 
-
-
-function convert(){
-    if(fartoCel.checked){
-
-        c = (parseInt(temp.value) - 32)*5/9 ;
-        console.log(c);
-        result.innerHTML = `far to cel ${c} °C`;
+    for(let i = 0 ; i < numOfDice ; i++){
+        const value = Math.floor(Math.random() * 6 ) + 1 ;
+        values.push(value);
+        images.push(`<img src="dice_image/${value}.png" alt="Dice ${value}">`); 
     }
-    else if(celtoFar.checked){
 
-        c = (parseInt(temp.value) * 9 / 5) + 32;
-        result.innerHTML = `cel to far ${c} °F `;
-    }
-    else{
-        result.innerHTML = "Select a unit";
-    }
+    diceResult.textContent =   `dice: ${values.join(',')}` ;
+
+    diceImage.innerHTML = images.join(" ");
+
 }

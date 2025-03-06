@@ -11,7 +11,7 @@ body {
     border-radius: 5px;
 }
 
-#result {
+#result { 
     margin: 10px 0;
     font-weight: bold;
 }
@@ -23,6 +23,7 @@ button {
     border: none;
     cursor: pointer;
     margin: 5px;
+    border-radius: 5px;
 }
 
 button:hover {
