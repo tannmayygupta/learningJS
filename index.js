@@ -1,21 +1,51 @@
-function RollDice(){
+function RandomPasswordGen(length , includelower , includeupper , includesymbol) {
+    
+    const lowalpha = "abcdefghijklmnopqrstuvwxyz" ;
+    const upperalpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
 
-    const numOfDice = document.getElementById("numOfDice").value ;
-    const diceResult = document.getElementById("diceResult");
-    const diceImage = document.getElementById("diceImage");
+    const numberChar = "0123456789";
 
-    const values = [] ;
+    const symbol = "!@#$%^&*(_)=+/*-" ;
 
-    const images = [] ;
+    let allowerchar = "";
 
-    for(let i = 0 ; i < numOfDice ; i++){
-        const value = Math.floor(Math.random() * 6 ) + 1 ;
-        values.push(value);
-        images.push(`<img src="dice_image/${value}.png" alt="Dice ${value}">`); 
+    let password = "" ;
+
+    allowerchar += includelower ? lowalpha : "" ;
+
+    allowerchar += includeupper ? upperalpha : "" ;
+
+    allowerchar += includesymbol ? symbol : "" ;
+
+    allowerchar += length ? numberChar : "" ;
+
+    if(length < 0){
+        return `password length should be more than 0` ;
+    }
+    else if(allowerchar.length === 0){
+        return `password must have atleast 1 set of character`;
     }
 
-    diceResult.textContent =   `dice: ${values.join(',')}` ;
+    // now what we will do is we will generate an random index so that we can get a random password 
 
-    diceImage.innerHTML = images.join(" ");
+    for(let i = 0 ; i < length ; i++){
+        const randomInd = Math.floor(Math.random() * allowerchar.length);
+        password +=allowerchar[randomInd];
+    }
+
+    return password ;
 
 }
+
+
+const length = 12 ;
+
+const includelower = true ;
+
+const includesymbol = true ;
+
+const includeupper = true ;
+
+const password = RandomPasswordGen(length , includelower , includeupper , includesymbol );
+
+console.log(password);
