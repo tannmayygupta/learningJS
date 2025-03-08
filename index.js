@@ -1,24 +1,27 @@
 // forEach() = method used to iterate over the lement in array and apply a specific callback function ;
 
 
-let arr = [1,2,3,4,5];
+let fruit = ["apple","banana","cherry"];
 
-arr.forEach(display); // here forEach calback fuc have parameter or attribute element , 
+fruit.forEach(upperCase);
+fruit.forEach(display);
 
-arr.forEach(double); // here forEach calback fuc have parameter or attribute element , 
+fruit.forEach(lowercase);
+fruit.forEach(display);
 
-arr.forEach(triple); // here forEach calback fuc have parameter or attribute element , 
+fruit.forEach(firstletterCap);
+fruit.forEach(display);
 
-// arr.forEach(display); // here forEach calback fuc have parameter or attribute element , 
+function upperCase(element, index , array){
+    array[index] = element.toUpperCase();
+}
 
-// function double(element , index , array){
-//     array[index] = element * 2 ;
-// }
+function lowercase(element, index , array){
+    array[index] = element.toLowerCase();
+}
 
-function triple(element , index , array){
-    // array[index] = element * 3 ;
-    console.log(element * 3);
-
+function firstletterCap(element, index , array){
+    array[index] = element.charAt(0).toUpperCase() + element.slice(1);
 }
 
 function display(element){
